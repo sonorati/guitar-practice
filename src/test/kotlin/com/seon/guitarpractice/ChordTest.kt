@@ -14,7 +14,7 @@ class ChordTest {
 
         assertThat(cMajor.name).isEqualTo("C")
         assertThat(cMajor.intervals).isEqualTo(listOf(ROOT, THIRD, FIFTH))
-        assertThat(cMajor.intervalNotes()).isEqualTo(listOf(C, E, G))
+        assertThat(cMajor.notes).isEqualTo(listOf(C, E, G))
     }
 
     @Test
@@ -23,7 +23,7 @@ class ChordTest {
 
         assertThat(cMajor.name).isEqualTo("G♭")
         assertThat(cMajor.intervals).isEqualTo(listOf(ROOT, THIRD, FIFTH))
-        assertThat(cMajor.intervalNotes()).isEqualTo(listOf(GFlat, BFlat, DFlat))
+        assertThat(cMajor.notes).isEqualTo(listOf(GFlat, BFlat, DFlat))
     }
 
     @Test
@@ -31,7 +31,7 @@ class ChordTest {
         val aMinor = Chord(root = A, type = Minor)
         assertThat(aMinor.name).isEqualTo("Am")
         assertThat(aMinor.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH))
-        assertThat(aMinor.intervalNotes()).isEqualTo(listOf(A, C, E))
+        assertThat(aMinor.notes).isEqualTo(listOf(A, C, E))
     }
 
     @Test
@@ -39,7 +39,7 @@ class ChordTest {
         val bDiminished = Chord(root = B, type = Diminished)
         assertThat(bDiminished.name).isEqualTo("Bo")
         assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
-        assertThat(bDiminished.intervalNotes()).isEqualTo(listOf(B, D, F))
+        assertThat(bDiminished.notes).isEqualTo(listOf(B, D, F))
     }
 
     @Test
@@ -47,6 +47,6 @@ class ChordTest {
         val bDiminished = Chord(G, Dominant)
         assertThat(bDiminished.name).isEqualTo("G7")
         assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, THIRD, FIFTH, MINOR_SEVENTH))
-        assertThat(bDiminished.intervalNotes()).isEqualTo(listOf(G, B, D, F))
+        assertThat(bDiminished.notes).isEqualTo(listOf(G, B, D, F))
     }
 }
