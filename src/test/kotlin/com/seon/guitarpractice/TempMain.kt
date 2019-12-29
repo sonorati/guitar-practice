@@ -1,10 +1,10 @@
 package com.seon.guitarpractice
 
-//fun main() {
-//    repeat((1..10).count()) {
-//        println("${it + 1}. ${randomTask()}")
-//    }
-//}
+fun main() {
+    repeat((1..10).count()) {
+        println("${it + 1}. ${randomTask()}")
+    }
+}
 
 fun randomTask(): String {
     val triads = listOf("major", "major", "minor", "diminished", "augmented").random()
