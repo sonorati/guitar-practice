@@ -33,26 +33,23 @@ object ScaleTemplate {
             Minor -> minorScaleInterval
             Augmented -> TODO()
             Diminished -> TODO()
+            else -> TODO()
         }
     }
 
     private fun notesForScale(key: Note, type: Type = Major): List<Note> {
-        return when (type) {
-            in listOf(Major, Diminished, Augmented) -> {
-                when (key) {
-                    in listOf(GFlat, CFlat) -> allNotesWithFlatsAlt
-                    CSharp -> allNotesWithSharpsAlt
-                    in listOf(C, G, D, A, E, B, FSharp) -> allNotesWithSharps
-                    else -> allNotesWithFlats
-                }
+        return if (type == Minor) {
+            when (key) {
+                in listOf(A, E, B, FSharp, CSharp, GSharp) -> allNotesWithSharps
+                else -> allNotesWithFlats
             }
-            Minor -> {
-                when (key) {
-                    in listOf(A, E, B, FSharp, CSharp, GSharp) -> allNotesWithSharps
-                    else -> allNotesWithFlats
-                }
+        } else {
+            when (key) {
+                in listOf(GFlat, CFlat) -> allNotesWithFlatsAlt
+                CSharp -> allNotesWithSharpsAlt
+                in listOf(C, G, D, A, E, B, FSharp) -> allNotesWithSharps
+                else -> allNotesWithFlats
             }
-            else -> TODO()
         }
     }
 
@@ -62,6 +59,7 @@ object ScaleTemplate {
             Minor -> minorScaleChords
             Augmented -> TODO()
             Diminished -> TODO()
+            else -> TODO()
         }
     }
 

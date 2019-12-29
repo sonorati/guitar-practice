@@ -3,6 +3,7 @@ package com.seon.guitarpractice
 import com.seon.guitarpractice.ScaleTemplate.getScaleChords
 import com.seon.guitarpractice.ScaleTemplate.getScaleInterval
 import com.seon.guitarpractice.ScaleTemplate.notesInKey
+import com.seon.guitarpractice.Type.*
 
 data class Scale(val key: Note, val type: Type) {
 
@@ -11,10 +12,9 @@ data class Scale(val key: Note, val type: Type) {
 
     fun isChordInScale(chord: Chord) = chords.contains(chord)
 
-    fun dominant() = chords[4]
+    fun dominant() = Chord(notes[4], Dominant)
 
     fun relativeMinor() = chords[5]
-
 
     private fun buildChords(): List<Chord> {
         val scaleChords = getScaleChords(type)

@@ -21,7 +21,7 @@ class ScaleTest {
                         Chord(B, Diminished)
                 )
                 )
-        assertThat(cMajorScale.dominant()).isEqualTo(Chord(G, Major))
+        assertThat(cMajorScale.dominant()).isEqualTo(Chord(G, Dominant))
         assertThat(cMajorScale.relativeMinor()).isEqualTo(Chord(A, Minor))
         assertThat(cMajorScale.notes).isEqualTo(listOf(C, D, E, F, G, A, B))
     }

@@ -41,4 +41,12 @@ class ChordTest {
         assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
         assertThat(bDiminished.intervalNotes()).isEqualTo(listOf(B, D, F))
     }
+
+    @Test
+    fun `should get G7`() {
+        val bDiminished = Chord(G, Dominant)
+        assertThat(bDiminished.name).isEqualTo("G7")
+        assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, THIRD, FIFTH, MINOR_SEVENTH))
+        assertThat(bDiminished.intervalNotes()).isEqualTo(listOf(G, B, D, F))
+    }
 }
