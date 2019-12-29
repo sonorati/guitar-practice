@@ -11,7 +11,7 @@ object ScaleTemplate {
     private val minorScaleChords = listOf(Minor, Diminished, Major, Minor, Minor, Major, Major)
 
     private val allNotesWithSharps = listOf(A, ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A,
-            ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G)
+            ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp)
     private val allNotesWithSharpsAlt = listOf(A, ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G, GSharp, A,
             ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G)
     private val allNotesWithFlats = listOf(A, BFlat, B, C, DFlat, D, EFlat, E, F, GFlat, G, AFlat, A,
@@ -40,14 +40,15 @@ object ScaleTemplate {
     private fun notesForScale(key: Note, type: Type = Major): List<Note> {
         return if (type == Minor) {
             when (key) {
-                in listOf(A, E, B, FSharp, CSharp, GSharp) -> allNotesWithSharps
+                ESharp -> allNotesWithSharpsAlt
+                in listOf(A, E, B, FSharp, ASharp, CSharp, DSharp, GSharp) -> allNotesWithSharps
                 else -> allNotesWithFlats
             }
         } else {
             when (key) {
-                in listOf(GFlat, CFlat) -> allNotesWithFlatsAlt
-                CSharp -> allNotesWithSharpsAlt
-                in listOf(C, G, D, A, E, B, FSharp) -> allNotesWithSharps
+                in listOf(GFlat, CFlat, FFlat) -> allNotesWithFlatsAlt
+                in listOf(CSharp, BSharp) -> allNotesWithSharpsAlt
+                in listOf(C, G, D, A, E, B, FSharp, DSharp, ASharp, GSharp) -> allNotesWithSharps
                 else -> allNotesWithFlats
             }
         }
