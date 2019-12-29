@@ -18,7 +18,7 @@ class ChordTest {
     }
 
     @Test
-    fun `should get Gb Major `() {
+    fun `should get Gb Major`() {
         val cMajor = Chord(root = GFlat, type = Major)
 
         assertThat(cMajor.name).isEqualTo("G♭")
