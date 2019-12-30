@@ -4,9 +4,18 @@ import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
 import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.Type.Major
+import com.seon.guitarpractice.Type.Minor
 
-data class DorianScale(val key: Note, val type: Type = Minor) : Scale(key, type) {
+data class MinorPentatonicScale(val key: Note, val type: Type = Minor) : Scale(key, type) {
+
+    override val interval = listOf(
+            Interval(ROOT, Minor),
+            Interval(MINOR_THIRD, Major),
+            Interval(FOURTH, Minor),
+            Interval(FIFTH, Minor),
+            Interval(MINOR_SEVENTH, Major)
+    )
 
     override fun scaleNotes(): List<Note> = when (key) {
         in listOf(ESharp, CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
@@ -14,13 +23,4 @@ data class DorianScale(val key: Note, val type: Type = Minor) : Scale(key, type)
         else -> ScaleTemplate.allNotesWithFlats
     }
 
-    override val interval = listOf(
-            Interval(ROOT, Major),
-            Interval(SECOND, Minor),
-            Interval(MINOR_THIRD, Major),
-            Interval(FOURTH, Major),
-            Interval(FIFTH, Minor),
-            Interval(SIXTH, Diminished),
-            Interval(MINOR_SEVENTH, Major)
-    )
 }

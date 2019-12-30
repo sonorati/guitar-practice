@@ -1,14 +1,30 @@
 package com.seon.guitarpractice.scale
 
+import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
+import com.seon.guitarpractice.Note.*
 import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.Major
+import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.scale.ScaleTemplate.allNotesWithFlats
+import com.seon.guitarpractice.scale.ScaleTemplate.allNotesWithSharps
 
 data class LydianScale(val key: Note, val type: Type = Major) : Scale(key, type) {
 
-    //TODO: FIXME CHORDS FROM MINOR SCALE!!
-    override val scaleChords: List<Type> = listOf(Type.Minor, Type.Diminished, Type.Major, Type.Minor, Type.Minor, Type.Major, Type.Major)
-    override val intervals: List<Int> = listOf(0, 2, 4, 6, 7, 9, 11)
+    override fun scaleNotes() = when (key) {
+        in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.allNotesWithFlatsAlt
+        in listOf(CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
+        in listOf(C, G, D, A, E, B, FSharp, DSharp, ASharp, GSharp) -> allNotesWithSharps
+        else -> allNotesWithFlats
+    }
 
+    override val interval = listOf(
+            Interval(ROOT, Major),
+            Interval(SECOND, Major),
+            Interval(THIRD, Minor),
+            Interval(RAISED_FOURTH, Diminished),
+            Interval(FIFTH, Major),
+            Interval(SIXTH, Minor),
+            Interval(SEVENTH, Minor)
+    )
 
 }

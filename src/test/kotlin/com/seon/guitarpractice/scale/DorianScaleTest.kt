@@ -11,6 +11,5 @@ class DorianScaleTest {
         val dorian = DorianScale(G)
 
         assertThat(dorian.notes()).isEqualTo(listOf(G, A, BFlat, C, D, E, F))
-
     }
 }
