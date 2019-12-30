@@ -1,7 +1,6 @@
-package com.seon.guitarpractice
+package com.seon.guitarpractice.scale
 
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.scale.MixolydianScale
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

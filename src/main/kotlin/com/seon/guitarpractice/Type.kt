@@ -4,6 +4,6 @@ enum class Type(val tabName: String) {
     Major(""),
     Minor("m"),
     Dominant("7"),
-    Augmented("Aug"),
+    Augmented(" aug"),
     Diminished("o")
 }

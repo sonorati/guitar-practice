@@ -10,6 +10,7 @@ enum class Interval(val position:Int) {
     FOURTH(6),
     MINOR_FIFTH(6),
     FIFTH(7),
+    AUGMENTED_FIFTH(8),
     SIXTH(9),
     MINOR_SEVENTH(10),
     SEVENTH(11),
