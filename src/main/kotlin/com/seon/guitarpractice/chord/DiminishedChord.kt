@@ -6,7 +6,7 @@ import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.Type.Diminished
 
-data class DiminishedChord(private val root: Note,
-                           val type: Type = Diminished,
-                           val intervals: List<Interval> = listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
-    : Chord(root, type, intervals)
+data class DiminishedChord(val root: Note) : Chord(root) {
+    override val type: Type = Diminished
+    override val intervals: List<Interval> = listOf(ROOT, MINOR_THIRD, MINOR_FIFTH)
+}

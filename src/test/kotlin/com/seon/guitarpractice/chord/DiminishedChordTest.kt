@@ -10,25 +10,25 @@ class DiminishedChordTest {
     @Test
     fun `should get B diminished`() {
         val bDiminished = DiminishedChord(B)
-        assertThat(bDiminished.name).isEqualTo("Bo")
+        assertThat(bDiminished.name()).isEqualTo("Bo")
         assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
-        assertThat(bDiminished.notes).isEqualTo(listOf(B, D, F))
+        assertThat(bDiminished.notes()).isEqualTo(listOf(B, D, F))
     }
 
     @Test
     fun `should get A#o diminished`() {
         val aSharpDiminished = DiminishedChord(ASharp)
-        assertThat(aSharpDiminished.name).isEqualTo("A#o")
+        assertThat(aSharpDiminished.name()).isEqualTo("A#o")
         assertThat(aSharpDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
-        assertThat(aSharpDiminished.notes).isEqualTo(listOf(ASharp, CSharp, E))
+        assertThat(aSharpDiminished.notes()).isEqualTo(listOf(ASharp, CSharp, E))
 
     }
 
     @Test
     fun `should get D#o`() {
         val dSharpDiminished = DiminishedChord(DSharp)
-        assertThat(dSharpDiminished.name).isEqualTo("D#o")
+        assertThat(dSharpDiminished.name()).isEqualTo("D#o")
         assertThat(dSharpDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, MINOR_FIFTH))
-        assertThat(dSharpDiminished.notes).isEqualTo(listOf(DSharp, FSharp, A))
+        assertThat(dSharpDiminished.notes()).isEqualTo(listOf(DSharp, FSharp, A))
     }
 }

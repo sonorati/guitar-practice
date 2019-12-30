@@ -5,15 +5,16 @@ import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.scale.ScaleTemplate.notesInKey
 
-abstract class Chord(private val root: Note,
-                     private val type: Type,
-                     private val intervals: List<Interval>) {
+abstract class Chord(private val root: Note) {
 
-    val name = "${root.tabName}${type.tabName}"
-    val notes = intervalNotes()
+    abstract val intervals: List<Interval>
+    abstract val type: Type
 
-    private fun intervalNotes(): List<Note> {
-        val notes = notesInKey(root, type)
-        return intervals.map { notes[it.position] }
+    fun name() = "${root.tabName}${type.tabName}"
+
+    fun notes(): List<Note> {
+        val notesInKey = notesInKey(root, type)
+        return intervals.map { notesInKey[it.position] }
     }
+
 }
