@@ -26,7 +26,7 @@ class MajorScaleTest {
                 )
         assertThat(cMajorScale.dominant()).isEqualTo(DominantChord(G))
         assertThat(cMajorScale.relativeMinor()).isEqualTo(MinorChord(A))
-        assertThat(cMajorScale.notes).isEqualTo(listOf(C, D, E, F, G, A, B))
+        assertThat(cMajorScale.notes()).isEqualTo(listOf(C, D, E, F, G, A, B))
     }
 
     @Test
@@ -43,7 +43,7 @@ class MajorScaleTest {
                         DiminishedChord(FSharp)
                 )
                 )
-        assertThat(gMajorScale.notes).isEqualTo(listOf(G, A, B, C, D, E, FSharp))
+        assertThat(gMajorScale.notes()).isEqualTo(listOf(G, A, B, C, D, E, FSharp))
     }
 
     @Test
@@ -60,7 +60,7 @@ class MajorScaleTest {
                         DiminishedChord(CSharp)
                 )
                 )
-        assertThat(dMajorScale.notes).isEqualTo(listOf(D, E, FSharp, G, A, B, CSharp))
+        assertThat(dMajorScale.notes()).isEqualTo(listOf(D, E, FSharp, G, A, B, CSharp))
     }
 
     @Test
@@ -77,7 +77,7 @@ class MajorScaleTest {
                         DiminishedChord(GSharp)
                 )
                 )
-        assertThat(aMajorScale.notes).isEqualTo(listOf(A, B, CSharp, D, E, FSharp, GSharp))
+        assertThat(aMajorScale.notes()).isEqualTo(listOf(A, B, CSharp, D, E, FSharp, GSharp))
     }
 
     @Test
@@ -94,7 +94,7 @@ class MajorScaleTest {
                         DiminishedChord(DSharp)
                 )
                 )
-        assertThat(eMajorScale.notes).isEqualTo(listOf(E, FSharp, GSharp, A, B, CSharp, DSharp))
+        assertThat(eMajorScale.notes()).isEqualTo(listOf(E, FSharp, GSharp, A, B, CSharp, DSharp))
     }
 
     @Test
@@ -111,7 +111,7 @@ class MajorScaleTest {
                         DiminishedChord(ASharp)
                 )
                 )
-        assertThat(bMajorScale.notes).isEqualTo(listOf(B, CSharp, DSharp, E, FSharp, GSharp, ASharp))
+        assertThat(bMajorScale.notes()).isEqualTo(listOf(B, CSharp, DSharp, E, FSharp, GSharp, ASharp))
     }
 
     @Test
@@ -128,7 +128,7 @@ class MajorScaleTest {
                         DiminishedChord(F)
                 )
                 )
-        assertThat(fSharpMajorScale.notes).isEqualTo(listOf(FSharp, GSharp, ASharp, B, CSharp, DSharp, F))
+        assertThat(fSharpMajorScale.notes()).isEqualTo(listOf(FSharp, GSharp, ASharp, B, CSharp, DSharp, F))
     }
 
     @Test
@@ -145,7 +145,7 @@ class MajorScaleTest {
                         DiminishedChord(BSharp)
                 )
                 )
-        assertThat(cSharpMajorScale.notes).isEqualTo(listOf(CSharp, DSharp, ESharp, FSharp, GSharp, ASharp, BSharp))
+        assertThat(cSharpMajorScale.notes()).isEqualTo(listOf(CSharp, DSharp, ESharp, FSharp, GSharp, ASharp, BSharp))
     }
 
     @Test
@@ -162,7 +162,7 @@ class MajorScaleTest {
                         DiminishedChord(E)
                 )
                 )
-        assertThat(fMajorScale.notes).isEqualTo(listOf(F, G, A, BFlat, C, D, E))
+        assertThat(fMajorScale.notes()).isEqualTo(listOf(F, G, A, BFlat, C, D, E))
     }
 
     @Test
@@ -179,7 +179,7 @@ class MajorScaleTest {
                         DiminishedChord(A)
                 )
                 )
-        assertThat(eFlatMajor.notes).isEqualTo(listOf(BFlat, C, D, EFlat, F, G, A))
+        assertThat(eFlatMajor.notes()).isEqualTo(listOf(BFlat, C, D, EFlat, F, G, A))
     }
 
     @Test
@@ -196,7 +196,7 @@ class MajorScaleTest {
                         DiminishedChord(D)
                 )
                 )
-        assertThat(eFlatMajor.notes).isEqualTo(listOf(EFlat, F, G, AFlat, BFlat, C, D))
+        assertThat(eFlatMajor.notes()).isEqualTo(listOf(EFlat, F, G, AFlat, BFlat, C, D))
     }
 
     @Test
@@ -213,7 +213,7 @@ class MajorScaleTest {
                         DiminishedChord(G)
                 )
                 )
-        assertThat(aFlatMajor.notes).isEqualTo(listOf(AFlat, BFlat, C, DFlat, EFlat, F, G))
+        assertThat(aFlatMajor.notes()).isEqualTo(listOf(AFlat, BFlat, C, DFlat, EFlat, F, G))
     }
 
     @Test
@@ -230,7 +230,7 @@ class MajorScaleTest {
                         DiminishedChord(C)
                 )
                 )
-        assertThat(dFlatMajor.notes).isEqualTo(listOf(DFlat, EFlat, F, GFlat, AFlat, BFlat, C))
+        assertThat(dFlatMajor.notes()).isEqualTo(listOf(DFlat, EFlat, F, GFlat, AFlat, BFlat, C))
     }
 
     @Test
@@ -247,7 +247,7 @@ class MajorScaleTest {
                         DiminishedChord(F)
                 )
                 )
-        assertThat(gFlatMajor.notes).isEqualTo(listOf(GFlat, AFlat, BFlat, CFlat, DFlat, EFlat, F))
+        assertThat(gFlatMajor.notes()).isEqualTo(listOf(GFlat, AFlat, BFlat, CFlat, DFlat, EFlat, F))
     }
 
     @Test
@@ -264,7 +264,7 @@ class MajorScaleTest {
                         DiminishedChord(BFlat)
                 )
                 )
-        assertThat(cFlatMajorScale.notes).isEqualTo(listOf(CFlat, DFlat, EFlat, FFlat, GFlat, AFlat, BFlat))
+        assertThat(cFlatMajorScale.notes()).isEqualTo(listOf(CFlat, DFlat, EFlat, FFlat, GFlat, AFlat, BFlat))
     }
 
 

@@ -23,6 +23,6 @@ class MinorScaleTest {
                         MajorChord(BFlat)
                 )
                 )
-        assertThat(cMinorScale.notes).isEqualTo(listOf(C, D, EFlat, F, G, AFlat, BFlat))
+        assertThat(cMinorScale.notes()).isEqualTo(listOf(C, D, EFlat, F, G, AFlat, BFlat))
     }
 }

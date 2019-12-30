@@ -10,7 +10,7 @@ class DorianScaleTest {
     fun `should get notes and chords for Dorian mode`() {
         val dorian = DorianScale(G)
 
-        assertThat(dorian.notes).isEqualTo(listOf(G, A, BFlat, C, D, E, F))
+        assertThat(dorian.notes()).isEqualTo(listOf(G, A, BFlat, C, D, E, F))
 
     }
 }

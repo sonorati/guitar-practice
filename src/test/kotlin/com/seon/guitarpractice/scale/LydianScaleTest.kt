@@ -10,7 +10,7 @@ class LydianScaleTest {
     fun `should get notes and chords for lydian mode`() {
         val lydian = LydianScale(G)
 
-        assertThat(lydian.notes).isEqualTo(listOf(G, A, B, CSharp, D, E, FSharp))
+        assertThat(lydian.notes()).isEqualTo(listOf(G, A, B, CSharp, D, E, FSharp))
 
     }
 }

@@ -10,7 +10,7 @@ class PhrygianScaleTest {
     fun `should get notes and chords for phrygian mode`() {
         val phrygian = PhrygianScale(G)
 
-        assertThat(phrygian.notes).isEqualTo(listOf(G, AFlat, BFlat, C, D, EFlat, F))
+        assertThat(phrygian.notes()).isEqualTo(listOf(G, AFlat, BFlat, C, D, EFlat, F))
 
     }
 }

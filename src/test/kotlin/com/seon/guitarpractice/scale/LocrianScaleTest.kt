@@ -10,7 +10,7 @@ class LocrianScaleTest {
     fun `should get notes and chords for locrian mode`() {
         val locrian = LocrianScale(G)
 
-        assertThat(locrian.notes).isEqualTo(listOf(G, AFlat, BFlat, C, DFlat, EFlat, F))
+        assertThat(locrian.notes()).isEqualTo(listOf(G, AFlat, BFlat, C, DFlat, EFlat, F))
 
     }
 }

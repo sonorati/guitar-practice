@@ -2,13 +2,10 @@ package com.seon.guitarpractice.scale
 
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.Major
+import com.seon.guitarpractice.Type.*
 
-data class MajorScale(val key: Note,
-                      val type: Type = Major,
-                      val interval: List<Int> = listOf(0, 2, 4, 5, 7, 9, 11))
-    : Scale(key, type, interval) {
+data class MajorScale(val key: Note, val type: Type = Major) : Scale(key, type) {
 
-    override fun scaleChords(): List<Type> =
-        listOf(Major, Type.Minor, Type.Minor, Major, Major, Type.Minor, Type.Diminished)
+    override val scaleChords: List<Type> = listOf(Major, Minor, Minor, Major, Major, Minor, Diminished)
+    override val intervals: List<Int> = listOf(0, 2, 4, 5, 7, 9, 11)
 }

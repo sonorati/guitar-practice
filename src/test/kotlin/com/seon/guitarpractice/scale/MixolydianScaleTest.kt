@@ -10,7 +10,7 @@ class MixolydianScaleTest {
     fun `should get notes and chords for mixolydian mode`() {
         val mixolydian = MixolydianScale(G)
 
-        assertThat(mixolydian.notes).isEqualTo(listOf(G, A, B, C, D, E, F))
+        assertThat(mixolydian.notes()).isEqualTo(listOf(G, A, B, C, D, E, F))
 
     }
 }
