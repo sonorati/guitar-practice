@@ -2,14 +2,15 @@ package com.seon.guitarpractice
 
 import com.seon.guitarpractice.Note.*
 import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.scale.MajorScale
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-class ScaleTest {
+class MajorScaleTest {
 
     @Test
     fun `should get C major chords`() {
-        val cMajorScale = Scale(C, Major)
+        val cMajorScale = MajorScale(C)
         assertThat(cMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(C, Major),
@@ -28,7 +29,7 @@ class ScaleTest {
 
     @Test
     fun `should get G major chords`() {
-        val gMajorScale = Scale(G, Major)
+        val gMajorScale = MajorScale(G)
         assertThat(gMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(G, Major),
@@ -45,7 +46,7 @@ class ScaleTest {
 
     @Test
     fun `should get D major chords`() {
-        val dMajorScale = Scale(D, Major)
+        val dMajorScale = MajorScale(D)
         assertThat(dMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(D, Major),
@@ -62,7 +63,7 @@ class ScaleTest {
 
     @Test
     fun `should get A major chords`() {
-        val aMajorScale = Scale(A, Major)
+        val aMajorScale = MajorScale(A)
         assertThat(aMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(A, Major),
@@ -79,7 +80,7 @@ class ScaleTest {
 
     @Test
     fun `should get E major chords`() {
-        val eMajorScale = Scale(E, Major)
+        val eMajorScale = MajorScale(E)
         assertThat(eMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(E, Major),
@@ -96,7 +97,7 @@ class ScaleTest {
 
     @Test
     fun `should get B major chords`() {
-        val bMajorScale = Scale(B, Major)
+        val bMajorScale = MajorScale(B)
         assertThat(bMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(B, Major),
@@ -113,7 +114,7 @@ class ScaleTest {
 
     @Test
     fun `should get F# major chords`() {
-        val fSharpMajorScale = Scale(FSharp, Major)
+        val fSharpMajorScale = MajorScale(FSharp)
         assertThat(fSharpMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(FSharp, Major),
@@ -130,7 +131,7 @@ class ScaleTest {
 
     @Test
     fun `should get C# major chords`() {
-        val cSharpMajorScale = Scale(CSharp, Major)
+        val cSharpMajorScale = MajorScale(CSharp)
         assertThat(cSharpMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(CSharp, Major),
@@ -147,7 +148,7 @@ class ScaleTest {
 
     @Test
     fun `should get F major chords`() {
-        val fMajorScale = Scale(F, Major)
+        val fMajorScale = MajorScale(F)
         assertThat(fMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(F, Major),
@@ -164,7 +165,7 @@ class ScaleTest {
 
     @Test
     fun `should get Bb major chords`() {
-        val eFlatMajor = Scale(BFlat, Major)
+        val eFlatMajor = MajorScale(BFlat)
         assertThat(eFlatMajor.chords)
                 .isEqualTo(listOf(
                         Chord(BFlat, Major),
@@ -181,7 +182,7 @@ class ScaleTest {
 
     @Test
     fun `should get Eb major chords`() {
-        val eFlatMajor = Scale(EFlat, Major)
+        val eFlatMajor = MajorScale(EFlat)
         assertThat(eFlatMajor.chords)
                 .isEqualTo(listOf(
                         Chord(EFlat, Major),
@@ -198,7 +199,7 @@ class ScaleTest {
 
     @Test
     fun `should get Ab major chords`() {
-        val aFlatMajor = Scale(AFlat, Major)
+        val aFlatMajor = MajorScale(AFlat)
         assertThat(aFlatMajor.chords)
                 .isEqualTo(listOf(
                         Chord(AFlat, Major),
@@ -215,7 +216,7 @@ class ScaleTest {
 
     @Test
     fun `should get Db major chords`() {
-        val dFlatMajor = Scale(DFlat, Major)
+        val dFlatMajor = MajorScale(DFlat)
         assertThat(dFlatMajor.chords)
                 .isEqualTo(listOf(
                         Chord(DFlat, Major),
@@ -232,7 +233,7 @@ class ScaleTest {
 
     @Test
     fun `should get Gb major chords`() {
-        val gFlatMajor = Scale(GFlat, Major)
+        val gFlatMajor = MajorScale(GFlat)
         assertThat(gFlatMajor.chords)
                 .isEqualTo(listOf(
                         Chord(GFlat, Major),
@@ -249,7 +250,7 @@ class ScaleTest {
 
     @Test
     fun `should get Cb major chords`() {
-        val cFlatMajorScale = Scale(CFlat, Major)
+        val cFlatMajorScale = MajorScale(CFlat)
         assertThat(cFlatMajorScale.chords)
                 .isEqualTo(listOf(
                         Chord(CFlat, Major),
@@ -264,26 +265,10 @@ class ScaleTest {
         assertThat(cFlatMajorScale.notes).isEqualTo(listOf(CFlat, DFlat, EFlat, FFlat, GFlat, AFlat, BFlat))
     }
 
-    @Test
-    fun `should get C minor chords`() {
-        val cMinorScale = Scale(C, Minor)
-        assertThat(cMinorScale.chords)
-                .isEqualTo(listOf(
-                        Chord(C, Minor),
-                        Chord(D, Diminished),
-                        Chord(EFlat, Major),
-                        Chord(F, Minor),
-                        Chord(G, Minor),
-                        Chord(AFlat, Major),
-                        Chord(BFlat, Major)
-                )
-                )
-        assertThat(cMinorScale.notes).isEqualTo(listOf(C, D, EFlat, F, G, AFlat, BFlat))
-    }
 
     @Test
     fun `should be true that C major is in C major scale`() {
-        val cMajorScale = Scale(C, Major)
+        val cMajorScale = MajorScale(C)
 
         val isChordInScale = cMajorScale.isChordInScale(Chord(C, Major))
 

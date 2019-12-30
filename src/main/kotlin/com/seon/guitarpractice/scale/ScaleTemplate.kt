@@ -1,12 +1,12 @@
-package com.seon.guitarpractice
+package com.seon.guitarpractice.scale
 
+import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
+import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.Type.*
 
 object ScaleTemplate {
 
-    private val majorScaleInterval = listOf(0, 2, 4, 5, 7, 9, 11)
-    private val minorScaleInterval = listOf(0, 2, 3, 5, 7, 8, 10)
     private val majorScaleChords = listOf(Major, Minor, Minor, Major, Major, Minor, Diminished)
     private val minorScaleChords = listOf(Minor, Diminished, Major, Minor, Minor, Major, Major)
 
@@ -27,20 +27,10 @@ object ScaleTemplate {
         return allNotes.subList(startFromKey, startFromKey + numberOfNotes)
     }
 
-    fun getScaleInterval(type: Type): List<Int> {
-        return when (type) {
-            Major -> majorScaleInterval
-            Minor -> minorScaleInterval
-            Augmented -> TODO()
-            Diminished -> TODO()
-            else -> TODO()
-        }
-    }
-
     private fun notesForScale(key: Note, type: Type = Major): List<Note> {
         return if (type == Minor) {
             when (key) {
-                ESharp -> allNotesWithSharpsAlt
+                in listOf(ESharp, CSharp, BSharp) -> allNotesWithSharpsAlt
                 in listOf(A, E, B, FSharp, ASharp, CSharp, DSharp, GSharp) -> allNotesWithSharps
                 else -> allNotesWithFlats
             }

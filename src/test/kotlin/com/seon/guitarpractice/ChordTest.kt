@@ -61,10 +61,34 @@ class ChordTest {
 
     @Test
     fun `should get D#m`() {
-        val bDiminished = Chord(DSharp, Minor)
-        assertThat(bDiminished.name).isEqualTo("D#m")
-        assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH))
-        assertThat(bDiminished.notes).isEqualTo(listOf(DSharp, FSharp, ASharp))
+        val dSharpMinor = Chord(DSharp, Minor)
+        assertThat(dSharpMinor.name).isEqualTo("D#m")
+        assertThat(dSharpMinor.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH))
+        assertThat(dSharpMinor.notes).isEqualTo(listOf(DSharp, FSharp, ASharp))
+    }
+
+    @Test
+    fun `should get C#m`() {
+        val cSharpMinor = Chord(CSharp, Minor)
+        assertThat(cSharpMinor.name).isEqualTo("C#m")
+        assertThat(cSharpMinor.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH))
+        assertThat(cSharpMinor.notes).isEqualTo(listOf(CSharp, E, GSharp))
+    }
+
+    @Test
+    fun `should get C#`() {
+        val cSharpMinor = Chord(CSharp, Major)
+        assertThat(cSharpMinor.name).isEqualTo("C#")
+        assertThat(cSharpMinor.intervals).isEqualTo(listOf(ROOT, THIRD, FIFTH))
+        assertThat(cSharpMinor.notes).isEqualTo(listOf(CSharp, ESharp, GSharp))
+    }
+
+    @Test
+    fun `should get E#m`() {
+        val eSharpMinor = Chord(ESharp, Minor)
+        assertThat(eSharpMinor.name).isEqualTo("E#m")
+        assertThat(eSharpMinor.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH))
+        assertThat(eSharpMinor.notes).isEqualTo(listOf(ESharp, GSharp, BSharp))
     }
 
     @Test
