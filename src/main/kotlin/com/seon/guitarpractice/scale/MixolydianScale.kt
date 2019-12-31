@@ -20,8 +20,7 @@ data class MixolydianScale(val key: Note, val type: Type = Major) : Scale(key, t
             Interval(THIRD, Diminished),
             Interval(FOURTH, Major),
             Interval(FIFTH, Minor),
-            Interval(SIXTH, Minor),
-            Interval(MINOR_SEVENTH, Major)
+            Interval(NATURAL_SIXTH, Minor),
+            Interval(FLAT_SEVENTH, Major)
     )
-
 }

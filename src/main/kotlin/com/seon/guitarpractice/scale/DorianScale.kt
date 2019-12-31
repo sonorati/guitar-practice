@@ -20,7 +20,7 @@ data class DorianScale(val key: Note, val type: Type = Minor) : Scale(key, type)
             Interval(MINOR_THIRD, Major),
             Interval(FOURTH, Major),
             Interval(FIFTH, Minor),
-            Interval(SIXTH, Diminished),
-            Interval(MINOR_SEVENTH, Major)
+            Interval(NATURAL_SIXTH, Diminished),
+            Interval(FLAT_SEVENTH, Major)
     )
 }

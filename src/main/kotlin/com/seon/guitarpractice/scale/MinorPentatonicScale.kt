@@ -14,7 +14,7 @@ data class MinorPentatonicScale(val key: Note, val type: Type = Minor) : Scale(k
             Interval(MINOR_THIRD, Major),
             Interval(FOURTH, Minor),
             Interval(FIFTH, Minor),
-            Interval(MINOR_SEVENTH, Major)
+            Interval(FLAT_SEVENTH, Major)
     )
 
     override fun scaleNotes(): List<Note> = when (key) {

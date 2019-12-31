@@ -17,11 +17,11 @@ data class PhrygianScale(val key: Note, val type: Type = Minor) : Scale(key, typ
 
     override val interval = listOf(
             Interval(ROOT, Major),
-            Interval(MINOR_SECOND, Major),
+            Interval(FLAT_SECOND, Major),
             Interval(MINOR_THIRD, Minor),
             Interval(FOURTH, Diminished),
             Interval(FIFTH, Major),
-            Interval(MINOR_SIXTH, Minor),
-            Interval(MINOR_SEVENTH, Minor)
+            Interval(FLAT_SIXTH, Minor),
+            Interval(FLAT_SEVENTH, Minor)
     )
 }

@@ -21,9 +21,9 @@ data class LydianScale(val key: Note, val type: Type = Major) : Scale(key, type)
             Interval(ROOT, Major),
             Interval(SECOND, Major),
             Interval(THIRD, Minor),
-            Interval(RAISED_FOURTH, Diminished),
+            Interval(SHARP_FOURTH, Diminished),
             Interval(FIFTH, Major),
-            Interval(SIXTH, Minor),
+            Interval(NATURAL_SIXTH, Minor),
             Interval(SEVENTH, Minor)
     )
 

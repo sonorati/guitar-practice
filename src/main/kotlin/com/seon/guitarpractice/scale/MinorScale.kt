@@ -19,7 +19,7 @@ data class MinorScale(val key: Note, val type: Type = Minor) : Scale(key, type) 
             Interval(MINOR_THIRD, Major),
             Interval(FOURTH, Minor),
             Interval(FIFTH, Minor),
-            Interval(MINOR_SIXTH, Major),
-            Interval(MINOR_SEVENTH, Major)
+            Interval(FLAT_SIXTH, Major),
+            Interval(FLAT_SEVENTH, Major)
     )
 }

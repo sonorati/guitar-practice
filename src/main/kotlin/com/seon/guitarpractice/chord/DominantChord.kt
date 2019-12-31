@@ -8,5 +8,5 @@ import com.seon.guitarpractice.Type.Dominant
 
 data class DominantChord(val root: Note) : Chord(root) {
     override val type: Type = Dominant
-    override val intervals: List<Interval> = listOf(ROOT, THIRD, FIFTH, MINOR_SEVENTH)
+    override val intervals: List<Interval> = listOf(ROOT, THIRD, FIFTH, FLAT_SEVENTH)
 }

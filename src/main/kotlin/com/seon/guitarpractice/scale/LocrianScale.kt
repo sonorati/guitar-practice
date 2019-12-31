@@ -16,11 +16,11 @@ data class LocrianScale(val key: Note, val type: Type = Minor) : Scale(key, type
 
     override val interval = listOf(
             Interval(ROOT, Diminished),
-            Interval(MINOR_SECOND, Major),
+            Interval(FLAT_SECOND, Major),
             Interval(MINOR_THIRD, Minor),
             Interval(FOURTH, Minor),
             Interval(MINOR_FIFTH, Major),
-            Interval(MINOR_SIXTH, Major),
-            Interval(MINOR_SEVENTH, Minor)
+            Interval(FLAT_SIXTH, Major),
+            Interval(FLAT_SEVENTH, Minor)
     )
 }
