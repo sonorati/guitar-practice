@@ -3,21 +3,26 @@ package com.seon.guitarpractice.scale
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.Type.*
-import com.seon.guitarpractice.chord.*
+import com.seon.guitarpractice.chord.model.*
 import com.seon.guitarpractice.scale.ScaleTemplate.notesInKey
 
 abstract class Scale(private val key: Note, private val type: Type) {
 
+    abstract val interval: List<Interval>
     abstract fun scaleNotes(): List<Note>
 
-    fun chords() = interval.mapIndexed { index, note ->
+    fun chords(): List<Chord> {
         val notes = notes()
-        when (note.chordType) {
-            Major -> MajorChord(notes[index])
-            Minor -> MinorChord(notes[index])
-            Augmented -> AugmentedChord(notes[index])
-            Diminished -> DiminishedChord(notes[index])
-            Dominant -> TODO()
+        return interval.mapIndexed { index, interval ->
+            when (interval.chordType) {
+                Major -> MajorChord(notes[index])
+                Minor -> MinorChord(notes[index])
+                Augmented -> AugmentedChord(notes[index])
+                Diminished -> DiminishedChord(notes[index])
+                Dominant -> DominantChord(notes[index])
+                MajorSeven -> MajorSevenChord(notes[index])
+                MinorSeven -> MinorSevenChord(notes[index])
+            }
         }
     }
 
@@ -29,9 +34,7 @@ abstract class Scale(private val key: Note, private val type: Type) {
 
     fun notes(): List<Note> {
         val allNotes = scaleNotes()
-        val notes = notesInKey(key, type, allNotes)
+        val notes = notesInKey(key, allNotes)
         return interval.map { notes[it.position.position] }
     }
-
-    abstract val interval: List<Interval>
 }

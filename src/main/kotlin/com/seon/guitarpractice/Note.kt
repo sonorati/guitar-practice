@@ -1,25 +1,27 @@
 package com.seon.guitarpractice
 
-enum class Note(val tabName: String) {
-    A("A"),
-    ASharp("A#"),
-    BFlat("B♭"),
-    B("B"),
-    BSharp("B#"),
-    CFlat("C♭"),
-    C("C"),
-    CSharp("C#"),
-    DFlat("D♭"),
-    D("D"),
-    DSharp("D#"),
-    EFlat("E♭"),
-    E("E"),
-    ESharp("E#"),
-    FFlat("F♭"),
-    F("F"),
-    FSharp("F#"),
-    GFlat("G♭"),
-    G("G"),
-    GSharp("G#"),
-    AFlat("A♭")
+import com.seon.guitarpractice.Accidental.*
+
+enum class Note(val tabName: String, val accidental: Accidental) {
+    A("A", PERFECT),
+    ASharp("A#", SHARP),
+    BFlat("B♭", FLAT),
+    B("B", PERFECT),
+    BSharp("B#", SHARP),
+    CFlat("C♭", FLAT),
+    C("C", PERFECT),
+    CSharp("C#", SHARP),
+    DFlat("D♭", FLAT),
+    D("D", PERFECT),
+    DSharp("D#", SHARP),
+    EFlat("E♭", FLAT),
+    E("E", PERFECT),
+    ESharp("E#", SHARP),
+    FFlat("F♭", FLAT),
+    F("F", PERFECT),
+    FSharp("F#", SHARP),
+    GFlat("G♭", FLAT),
+    G("G", PERFECT),
+    GSharp("G#", SHARP),
+    AFlat("A♭", FLAT)
 }

@@ -15,11 +15,13 @@ fun randomTask(): String {
             "$scales scale in $notes, position: $scalePositions",
             "$scales scale in $notes, position: $scalePositions",
             "find notes in the fretboard: $notes",
-            "$triads triads note: $notes",
-            "$triads arpeggios note: $notes, position: $scalePositions",
+            "$triads triads note: $notes from 4th string",
+//            "$triads arpeggios note: $notes, position: $scalePositions",
             "chord progressions",
             "Intervals",
-            "x-x-x chord progression in C"
+            "x-x-x chord progression in C",
+            "chord construction: C7 from 5th (A shape) string"
+
     )
 
     return exercises.random()

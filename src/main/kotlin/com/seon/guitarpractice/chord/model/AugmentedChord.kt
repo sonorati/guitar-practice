@@ -1,4 +1,4 @@
-package com.seon.guitarpractice.chord
+package com.seon.guitarpractice.chord.model
 
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note

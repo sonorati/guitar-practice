@@ -1,9 +1,12 @@
 package com.seon.guitarpractice.scale
 
+import com.seon.guitarpractice.Accidental
+import com.seon.guitarpractice.Accidental.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
 import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.Minor
+import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.chord.model.*
 
 object ScaleTemplate {
 
@@ -16,7 +19,15 @@ object ScaleTemplate {
     val allNotesWithFlatsAlt = listOf(A, BFlat, CFlat, C, DFlat, D, EFlat, FFlat, F, GFlat, G, AFlat, A,
             BFlat, CFlat, C, DFlat, D, EFlat, FFlat, F, GFlat, G)
 
-    fun notesInKey(key: Note, type: Type, allNotes: List<Note> = notesForScale(key, type)): List<Note> {
+    fun chordTypes(root: Note, type: Type): List<Note> {
+        return when (type) {
+            in listOf(Major, Augmented, Dominant, MajorSeven) -> MajorScale(root).scaleNotes()
+            in listOf(Minor, Diminished, MinorSeven) -> MinorScale(root).scaleNotes()
+            else -> allNotesWithSharps
+        }
+    }
+
+    fun notesInKey(key: Note, allNotes: List<Note>): List<Note> {
         val numberOfNotes = 12
         val startFromKey = allNotes.indexOf(key)
         return allNotes.subList(startFromKey, startFromKey + numberOfNotes)

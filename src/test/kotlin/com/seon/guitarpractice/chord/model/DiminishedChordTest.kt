@@ -1,7 +1,8 @@
-package com.seon.guitarpractice.chord
+package com.seon.guitarpractice.chord.model
 
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note.*
+import com.seon.guitarpractice.chord.model.DiminishedChord
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

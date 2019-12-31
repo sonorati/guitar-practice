@@ -1,9 +1,9 @@
 package com.seon.guitarpractice.scale
 
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.chord.DiminishedChord
-import com.seon.guitarpractice.chord.MajorChord
-import com.seon.guitarpractice.chord.MinorChord
+import com.seon.guitarpractice.chord.model.DiminishedChord
+import com.seon.guitarpractice.chord.model.MajorChord
+import com.seon.guitarpractice.chord.model.MinorChord
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
