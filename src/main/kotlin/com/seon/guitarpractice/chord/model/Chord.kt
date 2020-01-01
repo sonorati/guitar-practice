@@ -3,7 +3,6 @@ package com.seon.guitarpractice.chord.model
 import com.seon.guitarpractice.Interval
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.scale.ScaleTemplate.allNotesWithSharps
 import com.seon.guitarpractice.scale.ScaleTemplate.chordTypes
 import com.seon.guitarpractice.scale.ScaleTemplate.notesInKey
 
