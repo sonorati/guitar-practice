@@ -28,8 +28,8 @@ class MinorScaleTest {
 
     @Test
     fun `should get E minor notes and chords`() {
-        val cMinorScale = MinorScale(E)
-        assertThat(cMinorScale.chords())
+        val eMinor = MinorScale(E)
+        assertThat(eMinor.chords())
                 .isEqualTo(listOf(
                         MinorChord(E),
                         DiminishedChord(FSharp),
@@ -40,6 +40,6 @@ class MinorScaleTest {
                         MajorChord(D)
                 )
                 )
-        assertThat(cMinorScale.notes()).isEqualTo(listOf(E, FSharp, G, A, B, C, D))
+        assertThat(eMinor.notes()).isEqualTo(listOf(E, FSharp, G, A, B, C, D))
     }
 }
