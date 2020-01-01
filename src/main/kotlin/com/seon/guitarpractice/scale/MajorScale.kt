@@ -7,6 +7,7 @@ import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.Type.*
 import com.seon.guitarpractice.chord.model.*
 import java.util.*
+import java.util.Optional.*
 
 data class MajorScale(val key: Note, val type: Type = Major) : Scale(key, type) {
 
@@ -28,12 +29,12 @@ data class MajorScale(val key: Note, val type: Type = Major) : Scale(key, type) 
     )
 
     val interval2 = listOf(
-            Interval2(ROOT, { MajorChord(it) }, { Optional.of(MajorSevenChord(it)) }),
-            Interval2(SECOND, { MinorChord(it) }, { Optional.of(MinorSevenChord(it)) }),
-            Interval2(THIRD, { MinorChord(it) }, { Optional.of(MinorSevenChord(it)) }),
-            Interval2(FOURTH, { MajorChord(it) }, { Optional.of(MajorSevenChord(it)) }),
-            Interval2(FIFTH, { MajorChord(it) }, { Optional.of(DominantChord(it)) }),
-            Interval2(NATURAL_SIXTH, { MinorChord(it) }, { Optional.of(MinorSevenChord(it)) }),
-            Interval2(SEVENTH, { DiminishedChord(it) }, { Optional.of(DiminishedChord(it)) })
+            Interval2(ROOT, { MajorChord(it) }, { of(MajorSevenChord(it)) }),
+            Interval2(SECOND, { MinorChord(it) }, { of(MinorSevenChord(it)) }),
+            Interval2(THIRD, { MinorChord(it) }, { of(MinorSevenChord(it)) }),
+            Interval2(FOURTH, { MajorChord(it) }, { of(MajorSevenChord(it)) }),
+            Interval2(FIFTH, { MajorChord(it) }, { of(DominantChord(it)) }),
+            Interval2(NATURAL_SIXTH, { MinorChord(it) }, { of(MinorSevenChord(it)) }),
+            Interval2(SEVENTH, { DiminishedChord(it) }, { of(DiminishedChord(it)) })
     )
 }
