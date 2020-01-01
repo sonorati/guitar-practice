@@ -9,7 +9,10 @@ import com.seon.guitarpractice.scale.ScaleTemplate.notesInKey
 abstract class Scale(private val key: Note, private val type: Type) {
 
     abstract val interval: List<Interval>
+
     abstract fun scaleNotes(): List<Note>
+
+    fun extendedChords(): List<Chord> = TODO()
 
     fun chords(): List<Chord> {
         val notes = notes()
@@ -25,6 +28,11 @@ abstract class Scale(private val key: Note, private val type: Type) {
             }
         }
     }
+
+//    fun chords2(): List<Chord> {
+//        val notes = notes()
+//        return interval2.mapIndexed { index, interval -> interval.chord(notes[index]) }
+//    }
 
     fun isChordInScale(chord: Chord) = chords().contains(chord)
 

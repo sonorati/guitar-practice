@@ -7,20 +7,22 @@ fun main() {
 }
 
 fun randomTask(): String {
-    val triads = listOf("major", "major", "minor", "diminished", "augmented").random()
+    val triads = listOf("major", "major", "minor", "augmented").random()
     val scales = listOf("major", "major", "minor pentatonic").random()
     val notes = listOf("A", "B", "C", "D", "E", "F", "G").random()
+    val seventh = listOf("7", "maj7", "m7", "m7b5").random()
+    val triadsStrings = listOf("4", 3).random()
+    val string = listOf("6", "5").random()
     val scalePositions = listOf("1", "2", "3", "4", "5", "all").random()
     val exercises = listOf(
-            "$scales scale in $notes, position: $scalePositions",
-            "$scales scale in $notes, position: $scalePositions",
+            "major scale in $notes, position: $scalePositions",
+//            "$scales scale in $notes, position: $scalePositions",
             "find notes in the fretboard: $notes",
-            "$triads triads note: $notes from 4th string",
+            "$triads triads from ${triadsStrings}th note: $notes string",
 //            "$triads arpeggios note: $notes, position: $scalePositions",
-            "chord progressions",
-            "Intervals",
-            "x-x-x chord progression in C",
-            "chord construction: C7 from 5th (A shape) string"
+            "Intervals from $string string note $notes",
+//            "x-x-x chord progression in $notes from $string string",
+            "chord construction: $notes $seventh from ${string}th string"
 
     )
 
