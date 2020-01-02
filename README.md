@@ -5,7 +5,7 @@
 
 Music app for learning scales, chords, etc
 
-## sample exercises:
+## example randomly generated exercises:
 
 1. Major scale in C, position: all
 2. Minor Plagal Cadence from 3 string,  Note C#: [F#, F#, C#]
