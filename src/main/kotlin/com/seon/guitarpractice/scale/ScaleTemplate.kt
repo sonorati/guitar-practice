@@ -9,6 +9,10 @@ object ScaleTemplate {
 
     val allNotesWithSharps = listOf(A, ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A,
             ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp)
+
+    val allNotesWithDoubleSharps = listOf(ASharp, B, BSharp, CSharp, CSharpSharp, DSharp, E, ESharp, FSharp,
+            FSharpSharp, GSharp, GSharpSharp, A,
+            ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp)
     val allNotesWithSharpsAlt = listOf(A, ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G, GSharp, A,
             ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G)
     val allNotesWithFlats = listOf(A, BFlat, B, C, DFlat, D, EFlat, E, F, GFlat, G, AFlat, A,

@@ -47,6 +47,23 @@ class MajorScaleTest {
     }
 
     @Test
+    fun `should get A# major chords`() {
+        val scale = MajorScale(ASharp)
+        assertThat(scale.chords())
+                .isEqualTo(listOf(
+                        MajorChord(ASharp),
+                        MinorChord(BSharp),
+                        MinorChord(CSharpSharp),
+                        MajorChord(DSharp),
+                        MajorChord(ESharp),
+                        MinorChord(FSharpSharp),
+                        DiminishedChord(GSharpSharp)
+                )
+                )
+        assertThat(scale.notes()).isEqualTo(listOf(ASharp, BSharp, CSharpSharp, DSharp, ESharp, FSharpSharp, GSharpSharp))
+    }
+
+    @Test
     fun `should get D major chords`() {
         val dMajorScale = MajorScale(D)
         assertThat(dMajorScale.chords())

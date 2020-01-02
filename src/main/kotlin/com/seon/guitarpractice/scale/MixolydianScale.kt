@@ -16,7 +16,7 @@ data class MixolydianScale(val key: Note, val type: Type = Major) : Scale(key, t
 
     override val interval = listOf(
             Interval(ROOT, Major),
-            Interval(SECOND, Diminished),
+            Interval(SECOND, Minor),
             Interval(THIRD, Diminished),
             Interval(FOURTH, Major),
             Interval(FIFTH, Minor),

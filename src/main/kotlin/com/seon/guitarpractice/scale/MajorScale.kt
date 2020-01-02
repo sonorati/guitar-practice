@@ -6,15 +6,15 @@ import com.seon.guitarpractice.Note.*
 import com.seon.guitarpractice.Type
 import com.seon.guitarpractice.Type.*
 import com.seon.guitarpractice.chord.model.*
-import java.util.*
-import java.util.Optional.*
+import java.util.Optional.of
 
 data class MajorScale(val key: Note, val type: Type = Major) : Scale(key, type) {
 
     override fun scaleNotes(): List<Note> = when (key) {
         in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.allNotesWithFlatsAlt
+        ASharp -> ScaleTemplate.allNotesWithDoubleSharps
         in listOf(CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
-        in listOf(C, G, D, A, E, B, FSharp, DSharp, ASharp, GSharp) -> ScaleTemplate.allNotesWithSharps
+        in listOf(C, G, D, A, E, B, FSharp, DSharp, GSharp) -> ScaleTemplate.allNotesWithSharps
         else -> ScaleTemplate.allNotesWithFlats
     }
 
