@@ -28,6 +28,7 @@ val scalePositions = listOf("1", "2", "3", "4", "5", "all").random()
 val minorScaleChordProgressions = listOf(
         listOf(i, VI, III, VII),
         listOf(i, VI, VII, v),
+        listOf(i, VI, II, VII),
         listOf(i, VII, VI, v)
 ).random()
 
