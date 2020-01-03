@@ -50,23 +50,27 @@ fun randomTask(): String {
             "Minor pentatonic scale in ${notes.tabName}, position: $scalePositions",
 //            "$triads arpeggios note: $notes, position: $scalePositions",
             "Intervals, name distance and note from $string string, Note ${notes.tabName}",
-            "$majorScaleChordProgressions progression in ${notes.tabName} from $string string",
             "Chord construction: ${notes.tabName}$seventh from $string string",
-            "Minor Plagal Cadence from $string string,  Note ${notes.tabName}: ${getIntervals(notes, listOf(IV, iv, I))}",
-            "Plagal Cadence from $string string, Note ${notes.tabName}: ${getIntervals(notes, listOf(IV, I))}",
-            "Perfect Cadence from $string string, Note: ${notes.tabName} ${getIntervals(notes, listOf(V, I))}",
-            "$majorScaleChordProgressions chord progression in ${notes.tabName}: ${getIntervals(notes, majorScaleChordProgressions)}",
-            "$minorScaleChordProgressions chord progression in ${notes.tabName}: ${getIntervals(notes, minorScaleChordProgressions)}"
+            "Minor Plagal Cadence, Note ${notes.tabName}",
+            "Plagal Cadence, Note ${notes.tabName}",
+            "Perfect Cadence, Note: ${notes.tabName}"
     )
 
     val triadExercises = listOf(
             "Find notes in the fretboard: ${notes.tabName}",
             "$triads triads from ${triadsStrings}th string, Note: ${notes.tabName} find 3rd and 5th note",
+//            "riff and lead Harmonic Minor (https://www.youtube.com/watch?v=2kSq9GtZu_k)",
+//            "Progression with borrowed chords (https://www.youtube.com/watch?v=7IdttvJSedg)",
+//            "Progression with 7 (https://www.youtube.com/watch?v=3JizNRwHYNY)",
+//            "Progression with secondary dominants (https://www.youtube.com/watch?v=py4HaueW50Q)",
+//            "Progression with Motifs and Chords (https://www.youtube.com/watch?v=z3Dy6Mnp5Og&t=332s)",
             """$majorScaleChordProgressions progression from string: $triadsStrings
    ${getIntervals(notes, majorScaleChordProgressions)}""".trim(),
             """ $minorScaleChordProgressions  progression from string:  $triadsStrings
     ${getIntervals(notes, minorScaleChordProgressions)}""".trimIndent()
     )
+
+    val riffExercises = listOf("Metallica riff")
 
     return triadExercises.random()
 }
