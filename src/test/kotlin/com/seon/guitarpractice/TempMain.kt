@@ -6,8 +6,8 @@ import com.seon.guitarpractice.Type.Major
 import com.seon.guitarpractice.Type.Minor
 import com.seon.guitarpractice.scale.*
 
+// reference: https://feelyoursound.com/scale-chords/c-locrian/
 fun main() {
-
 //    repeat((1..10).count()) {
 //        println("${it + 1}. ${generateTask()}")
 //    }
@@ -51,6 +51,7 @@ fun generateTask(): String {
     //4. technique
     //5. find notes and chords
     //6. scales
+    //7. modes with backing track
 
     val exercises = listOf("")
 
@@ -92,6 +93,9 @@ val findNotesAndChordExercises = listOf(
         "$triads triads from ${triadsStrings}th string, Note: ${notes.tabName} find 3rd and 5th note"
 )
 
+val modesExercise = listOf(
+        ""
+)
 val scaleExercises = listOf(
         "${notes.name} mixolydian chords: ${scaleChords(mixolydianScale)}",
         "$triads scale in ${notes.tabName}, position: $scalePositions",
@@ -105,7 +109,7 @@ fun getIntervals(key: Note, progressions: List<Progression>): String {
 
 fun processScales(key: Note) {
     allModes(key).forEach { scale ->
-        println("${scale.javaClass.simpleName}    Chords: ${scaleChords(scale)}")
+        println("Chords: ${scaleChords(scale)} ${scale.javaClass.simpleName}")
     }
 }
 

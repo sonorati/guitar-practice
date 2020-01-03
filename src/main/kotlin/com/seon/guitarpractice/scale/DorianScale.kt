@@ -15,7 +15,7 @@ data class DorianScale(val key: Note, val type: Type = Minor) : Scale(key, type)
     }
 
     override val interval = listOf(
-            Interval(ROOT, Major),
+            Interval(ROOT, Minor),
             Interval(SECOND, Minor),
             Interval(MINOR_THIRD, Major),
             Interval(FOURTH, Major),
