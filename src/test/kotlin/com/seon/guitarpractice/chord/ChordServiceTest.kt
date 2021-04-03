@@ -2,9 +2,9 @@ package com.seon.guitarpractice.chord
 
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.Major
-import com.seon.guitarpractice.Type.Minor
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.Major
+import com.seon.guitarpractice.ChordType.Minor
 import com.seon.guitarpractice.chord.model.MinorSevenChord
 import com.seon.guitarpractice.chord.service.ChordService
 import org.assertj.core.api.Assertions.assertThat
@@ -42,7 +42,7 @@ class ChordServiceTest {
     fun `should get Am7 chord given A C E G notes`() {
         val chord = chordService.chordFinder(A, C, E, G)
         assertThat(chord.name()).isEqualTo("Am7")
-        assertThat(chord.type).isEqualTo(Type.MinorSeven)
+        assertThat(chord.type).isEqualTo(ChordType.MinorSeven)
         assertThat(chord.intervals).isEqualTo(listOf(ROOT, MINOR_THIRD, FIFTH, FLAT_SEVENTH))
         assertThat(chord).isInstanceOf(MinorSevenChord::class.java)
     }

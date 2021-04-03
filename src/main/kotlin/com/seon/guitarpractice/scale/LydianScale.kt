@@ -3,18 +3,18 @@ package com.seon.guitarpractice.scale
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
-import com.seon.guitarpractice.scale.ScaleTemplate.allNotesWithFlats
-import com.seon.guitarpractice.scale.ScaleTemplate.allNotesWithSharps
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.*
+import com.seon.guitarpractice.scale.ScaleTemplate.notesWithFlats
+import com.seon.guitarpractice.scale.ScaleTemplate.notesWithSharps
 
-data class LydianScale(val key: Note, val type: Type = Major) : Scale(key, type) {
+data class LydianScale(val key: Note, val type: ChordType = Major) : Scale(key) {
 
     override fun scaleNotes() = when (key) {
-        in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.allNotesWithFlatsAlt
-        in listOf(CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
-        in listOf(C, G, D, A, E, B, FSharp, DSharp, ASharp, GSharp) -> allNotesWithSharps
-        else -> allNotesWithFlats
+        in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.notesWithFlatsAlt
+        in listOf(CSharp, BSharp) -> ScaleTemplate.notesWithSharpsAlt
+        in listOf(C, G, D, A, E, B, FSharp, DSharp, ASharp, GSharp) -> notesWithSharps
+        else -> notesWithFlats
     }
 
     override val interval = listOf(

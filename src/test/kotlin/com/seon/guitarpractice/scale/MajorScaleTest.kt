@@ -11,6 +11,12 @@ import org.junit.jupiter.api.Test
 class MajorScaleTest {
 
     @Test
+    fun `should get string with list of chords`() {
+        val cMajor = MajorScale(C)
+        assertThat(cMajor.scaleChords()).isEqualTo("| C |  Dm |  Em |  F |  G |  Am |  Bo | ")
+    }
+
+    @Test
     fun `should get C major chords`() {
         val cMajorScale = MajorScale(C)
         assertThat(cMajorScale.chords())
@@ -142,10 +148,10 @@ class MajorScaleTest {
                         MajorChord(B),
                         MajorChord(CSharp),
                         MinorChord(DSharp),
-                        DiminishedChord(F)
+                        DiminishedChord(ESharp)
                 )
                 )
-        assertThat(fSharpMajorScale.notes()).isEqualTo(listOf(FSharp, GSharp, ASharp, B, CSharp, DSharp, F))
+        assertThat(fSharpMajorScale.notes()).isEqualTo(listOf(FSharp, GSharp, ASharp, B, CSharp, DSharp, ESharp))
     }
 
     @Test

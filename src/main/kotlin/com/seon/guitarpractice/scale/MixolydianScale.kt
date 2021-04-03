@@ -3,15 +3,15 @@ package com.seon.guitarpractice.scale
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.C
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.*
 
-data class MixolydianScale(val key: Note, val type: Type = Major) : Scale(key, type) {
+data class MixolydianScale(val key: Note, val type: ChordType = Major) : Scale(key) {
 
     override fun scaleNotes(): List<Note> {
         return if (key == C) {
-            ScaleTemplate.allNotesWithFlats
-        } else ScaleTemplate.allNotesWithSharps
+            ScaleTemplate.notesWithFlats
+        } else ScaleTemplate.notesWithSharps
     }
 
     override val interval = listOf(

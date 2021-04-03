@@ -3,11 +3,11 @@ package com.seon.guitarpractice.scale
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.Major
-import com.seon.guitarpractice.Type.Minor
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.Major
+import com.seon.guitarpractice.ChordType.Minor
 
-data class MinorPentatonicScale(val key: Note, val type: Type = Minor) : Scale(key, type) {
+data class MinorPentatonicScale(val key: Note, val type: ChordType = Minor) : Scale(key) {
 
     override val interval = listOf(
             Interval(ROOT, Minor),
@@ -18,9 +18,9 @@ data class MinorPentatonicScale(val key: Note, val type: Type = Minor) : Scale(k
     )
 
     override fun scaleNotes(): List<Note> = when (key) {
-        in listOf(ESharp, CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
-        in listOf(A, E, B, FSharp, ASharp, CSharp, DSharp, GSharp) -> ScaleTemplate.allNotesWithSharps
-        else -> ScaleTemplate.allNotesWithFlats
+        in listOf(ESharp, CSharp, BSharp) -> ScaleTemplate.notesWithSharpsAlt
+        in listOf(A, E, B, FSharp, ASharp, CSharp, DSharp, GSharp) -> ScaleTemplate.notesWithSharps
+        else -> ScaleTemplate.notesWithFlats
     }
 
 }

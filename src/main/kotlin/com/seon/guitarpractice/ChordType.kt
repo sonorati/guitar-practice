@@ -1,6 +1,6 @@
 package com.seon.guitarpractice
 
-enum class Type(val tabName: String) {
+enum class ChordType(val tabName: String) {
     Major(""),
     MajorSeven("maj7"),
     Minor("m"),

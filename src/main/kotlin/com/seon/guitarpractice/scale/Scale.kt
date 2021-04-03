@@ -1,18 +1,16 @@
 package com.seon.guitarpractice.scale
 
 import com.seon.guitarpractice.Note
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.ChordType.*
 import com.seon.guitarpractice.chord.model.*
 import com.seon.guitarpractice.scale.ScaleTemplate.notesInKey
 
-abstract class Scale(private val key: Note, private val type: Type) {
+abstract class Scale(private val key: Note) {
 
     abstract val interval: List<Interval>
+//    abstract val interval2: List<Interval2>
 
     abstract fun scaleNotes(): List<Note>
-
-    fun extendedChords(): List<Chord> = TODO()
 
     fun chords(): List<Chord> {
         val notes = notes()
@@ -29,9 +27,8 @@ abstract class Scale(private val key: Note, private val type: Type) {
         }
     }
 
-//    fun chords2(): List<Chord> {
-//        val notes = notes()
-//        return interval2.mapIndexed { index, interval -> interval.chord(notes[index]) }
+//    fun extendedChords(): List<Chord> = interval2.mapIndexed {
+//
 //    }
 
     fun isChordInScale(chord: Chord) = chords().contains(chord)
@@ -44,5 +41,9 @@ abstract class Scale(private val key: Note, private val type: Type) {
         val allNotes = scaleNotes()
         val notes = notesInKey(key, allNotes)
         return interval.map { notes[it.position.position] }
+    }
+
+    fun scaleChords(): String {
+        return chords().fold("|") { acc, chord -> "$acc ${chord.name()} | " }
     }
 }

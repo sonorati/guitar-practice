@@ -3,19 +3,19 @@ package com.seon.guitarpractice.scale
 import com.seon.guitarpractice.Interval.*
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.*
 import com.seon.guitarpractice.chord.model.*
 import java.util.Optional.of
 
-data class MajorScale(val key: Note, val type: Type = Major) : Scale(key, type) {
+data class MajorScale(val key: Note, val type: ChordType = Major) : Scale(key) {
 
     override fun scaleNotes(): List<Note> = when (key) {
-        in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.allNotesWithFlatsAlt
-        ASharp -> ScaleTemplate.allNotesWithDoubleSharps
-        in listOf(CSharp, BSharp) -> ScaleTemplate.allNotesWithSharpsAlt
-        in listOf(C, G, D, A, E, B, FSharp, DSharp, GSharp) -> ScaleTemplate.allNotesWithSharps
-        else -> ScaleTemplate.allNotesWithFlats
+        in listOf(GFlat, CFlat, FFlat) -> ScaleTemplate.notesWithFlatsAlt
+        ASharp -> ScaleTemplate.notesWithDoubleSharps
+        in listOf(CSharp, BSharp, FSharp) -> ScaleTemplate.notesWithSharpsAlt
+        in listOf(C, G, D, A, E, B, DSharp, GSharp) -> ScaleTemplate.notesWithSharps
+        else -> ScaleTemplate.notesWithFlats
     }
 
     override val interval = listOf(

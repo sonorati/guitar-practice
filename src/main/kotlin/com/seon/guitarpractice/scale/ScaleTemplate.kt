@@ -2,29 +2,28 @@ package com.seon.guitarpractice.scale
 
 import com.seon.guitarpractice.Note
 import com.seon.guitarpractice.Note.*
-import com.seon.guitarpractice.Type
-import com.seon.guitarpractice.Type.*
+import com.seon.guitarpractice.ChordType
+import com.seon.guitarpractice.ChordType.*
 
 object ScaleTemplate {
 
-    val allNotesWithSharps = listOf(A, ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A,
+    val notesWithSharps = listOf(A, ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp, A,
             ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp)
-
-    val allNotesWithDoubleSharps = listOf(ASharp, B, BSharp, CSharp, CSharpSharp, DSharp, E, ESharp, FSharp,
+    val notesWithDoubleSharps = listOf(ASharp, B, BSharp, CSharp, CSharpSharp, DSharp, E, ESharp, FSharp,
             FSharpSharp, GSharp, GSharpSharp, A,
             ASharp, B, C, CSharp, D, DSharp, E, F, FSharp, G, GSharp)
-    val allNotesWithSharpsAlt = listOf(A, ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G, GSharp, A,
+    val notesWithSharpsAlt = listOf(A, ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G, GSharp, A,
             ASharp, B, BSharp, CSharp, D, DSharp, E, ESharp, FSharp, G)
-    val allNotesWithFlats = listOf(A, BFlat, B, C, DFlat, D, EFlat, E, F, GFlat, G, AFlat, A,
+    val notesWithFlats = listOf(A, BFlat, B, C, DFlat, D, EFlat, E, F, GFlat, G, AFlat, A,
             BFlat, B, C, DFlat, D, EFlat, E, F, GFlat, G)
-    val allNotesWithFlatsAlt = listOf(A, BFlat, CFlat, C, DFlat, D, EFlat, FFlat, F, GFlat, G, AFlat, A,
+    val notesWithFlatsAlt = listOf(A, BFlat, CFlat, C, DFlat, D, EFlat, FFlat, F, GFlat, G, AFlat, A,
             BFlat, CFlat, C, DFlat, D, EFlat, FFlat, F, GFlat, G)
 
-    fun chordTypes(root: Note, type: Type): List<Note> {
-        return when (type) {
+    fun chordTypes(root: Note, chordType: ChordType): List<Note> {
+        return when (chordType) {
             in listOf(Major, Augmented, Dominant, MajorSeven) -> MajorScale(root).scaleNotes()
             in listOf(Minor, Diminished, MinorSeven) -> MinorScale(root).scaleNotes()
-            else -> allNotesWithSharps
+            else -> notesWithSharps
         }
     }
 
