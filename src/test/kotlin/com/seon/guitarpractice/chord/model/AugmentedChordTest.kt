@@ -10,7 +10,7 @@ class AugmentedChordTest {
     @Test
     fun `should get C Augmented`() {
         val bDiminished = AugmentedChord(C)
-        assertThat(bDiminished.name()).isEqualTo("C aug")
+        assertThat(bDiminished.name()).isEqualTo("Caug")
         assertThat(bDiminished.intervals).isEqualTo(listOf(ROOT, THIRD, AUGMENTED_FIFTH))
         assertThat(bDiminished.notes()).isEqualTo(listOf(C, E, GSharp))
     }

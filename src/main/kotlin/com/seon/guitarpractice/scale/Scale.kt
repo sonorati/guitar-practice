@@ -12,6 +12,12 @@ abstract class Scale(private val key: Note) {
 
     abstract fun scaleNotes(): List<Note>
 
+    fun notes(): List<Note> {
+        val allNotes = scaleNotes()
+        val notes = notesInKey(key, allNotes)
+        return interval.map { notes[it.position.position] }
+    }
+
     fun chords(): List<Chord> {
         val notes = notes()
         return interval.mapIndexed { index, interval ->
@@ -34,12 +40,6 @@ abstract class Scale(private val key: Note) {
     fun isChordInScale(chord: Chord) = chords().contains(chord)
 
     fun dominant() = DominantChord(notes()[4])
-
-    fun notes(): List<Note> {
-        val allNotes = scaleNotes()
-        val notes = notesInKey(key, allNotes)
-        return interval.map { notes[it.position.position] }
-    }
 
     fun scaleChords(): String {
         return chords().fold("|") { acc, chord -> "$acc ${chord.name()} | " }

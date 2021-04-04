@@ -13,7 +13,7 @@ class MajorScaleTest {
     @Test
     fun `should get string with list of chords`() {
         val cMajor = MajorScale(C)
-        assertThat(cMajor.scaleChords()).isEqualTo("| C |  Dm |  Em |  F |  G |  Am |  Bo | ")
+        assertThat(cMajor.scaleChords()).isEqualTo("| C |  Dm |  Em |  F |  G |  Am |  Bdim | ")
     }
 
     @Test
