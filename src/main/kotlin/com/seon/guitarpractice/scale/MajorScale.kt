@@ -28,6 +28,8 @@ data class MajorScale(val key: Note, val type: ChordType = Major) : Scale(key) {
             Interval(SEVENTH, Diminished)
     )
 
+    fun relativeMinor() = chords()[5]
+
     val interval2 = listOf(
             Interval2(ROOT, { MajorChord(it) }, { of(MajorSevenChord(it)) }),
             Interval2(SECOND, { MinorChord(it) }, { of(MinorSevenChord(it)) }),

@@ -15,6 +15,7 @@ val minorScaleChordProgressions = listOf(
 
 val majorScaleChordProgressions = listOf(
         listOf(I, vi, IV, V),
+        listOf(I, iv, V, iv),
         listOf(I, V, vi, iii, IV, iii, IV, V),
         listOf(I, iii, vi, IV),
         listOf(I, iii, I, iii),
@@ -22,5 +23,7 @@ val majorScaleChordProgressions = listOf(
         listOf(I, V, vi, IV),
         listOf(I, ii, iii, ii),
         listOf(I, IV, vi, V),
-        listOf(IV, V, I)
+        listOf(ii, V, I, vi),
+        listOf(IV, V, I),
+        listOf(vi,vi, I, V)
 )

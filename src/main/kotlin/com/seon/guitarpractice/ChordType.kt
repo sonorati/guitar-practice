@@ -6,6 +6,6 @@ enum class ChordType(val tabName: String) {
     Minor("m"),
     MinorSeven("m7"),
     Dominant("7"),
-    Augmented(" aug"),
-    Diminished("o")
+    Augmented("aug"),
+    Diminished("dim")
 }

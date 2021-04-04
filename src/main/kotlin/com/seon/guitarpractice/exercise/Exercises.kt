@@ -78,22 +78,10 @@ fun getIntervals(key: Note, progressions: List<Progression>): String {
     return chordInterval.map { it.name() }.toString()
 }
 
-fun processScales(key: Note, scales: List<Scale> = allModes(key)) {
+fun processScales(key: Note, scales: List<Scale> = ScaleService().allModes(key)) {
     scales.forEach { scale ->
         println("Chords: ${scale.scaleChords()} ${scale.javaClass.simpleName}")
     }
-}
-
-fun allModes(key: Note): List<Scale> {
-    return listOf(
-            MajorScale(key),
-            DorianScale(key),
-            PhrygianScale(key),
-            LydianScale(key),
-            MixolydianScale(key),
-            MinorScale(key),
-            LocrianScale(key)
-    )
 }
 
 val findNotesAndChordExercises = listOf(

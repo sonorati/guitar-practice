@@ -35,8 +35,6 @@ abstract class Scale(private val key: Note) {
 
     fun dominant() = DominantChord(notes()[4])
 
-    fun relativeMinor() = chords()[5]
-
     fun notes(): List<Note> {
         val allNotes = scaleNotes()
         val notes = notesInKey(key, allNotes)
@@ -45,5 +43,9 @@ abstract class Scale(private val key: Note) {
 
     fun scaleChords(): String {
         return chords().fold("|") { acc, chord -> "$acc ${chord.name()} | " }
+    }
+
+    fun scaleIntervals(): String {
+        return interval.fold("|") { acc, iv -> "$acc $iv | " }
     }
 }
